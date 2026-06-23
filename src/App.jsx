@@ -102,8 +102,7 @@ export default function App() {
   async function pasteFromClipboard() {
     try {
       const value = await navigator.clipboard.readText()
-      setText((prev) => (prev ? `${prev}
-${value}` : value))
+      setText((prev) => (prev ? `${prev}\n${value}` : value))
       showStatus('Text pasted from clipboard.')
     } catch (error) {
       showStatus('Clipboard paste failed in this browser. Please paste manually.')
@@ -119,8 +118,7 @@ ${value}` : value))
       `Excluded occurrences removed: ${analysis.excludedOccurrences}`,
       `Excluded words: ${excludedWords.length ? excludedWords.join(', ') : 'None'}`,
       `Numbers excluded: ${excludeNumbers ? 'Yes' : 'No'}`,
-    ].join('
-')
+    ].join('\n')
 
     try {
       await navigator.clipboard.writeText(summary)
