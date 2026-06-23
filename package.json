@@ -1,5 +1,5 @@
 {
-  "name": "word-count-exclusion-tool",
+  "name": "word-count-tool",
   "private": true,
   "version": "1.0.0",
   "type": "module",
